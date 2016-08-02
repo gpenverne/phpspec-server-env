@@ -18,9 +18,8 @@ class ServerEnvListener implements EventSubscriberInterface {
     public function beforeExample(ExampleEvent $event) {
         $env_stack = [];
         foreach($this->variables as $key => $value) {
-            $value_env = $_SERVER[$key];
-            if($value_env) {
-                $env_stack[$key] = $value_env;
+            if(isset($_SERVER[$key])) {
+                $env_stack[$key] = $_SERVER[$key];
             }
             $_SERVER[$key] = $value;
         }
