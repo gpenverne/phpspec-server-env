@@ -24,7 +24,6 @@ class ServerEnvListener implements EventSubscriberInterface {
             }
             $_SERVER[$key] = $value;
         }
-        var_dump($env_stack);
         array_push($this->env_stacks, $env_stack);
     }
 
