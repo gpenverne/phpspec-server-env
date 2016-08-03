@@ -7,7 +7,7 @@ Replace variables in $_SERVER during running PhpSpec.
 Add it to your `composer.json` file to install with [Composer](http://getcomposer.org):
 
 ``` bash
-composer require Tei1988/phpspec-server-env
+composer require tei1988/phpspec-server-env
 ```
 
 Enable it in your `phpspec.yml` file:
