@@ -16,5 +16,5 @@ Enable it in your `phpspec.yml` file:
 extensions:
     - PhpSpec\Extension\ServerEnvExtension
 server_env:
-  REPLACE_VALUES_YOU_WANT_TO_DO: VALUE
+  A_KEY_YOU_WANT_TO_REPLACE: A_VALUE_YOU_WANT_TO_REPLACE
 ```
