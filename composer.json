@@ -1,5 +1,5 @@
 {
-    "name" : "Tei1988/phpspec-server-env",
+    "name" : "tei1988/phpspec-server-env",
     "description" : "Override $_SERVER in running PhpSpec",
     "license" : "MIT",
 
