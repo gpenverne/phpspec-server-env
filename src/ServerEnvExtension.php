@@ -3,21 +3,17 @@
 namespace PhpSpec\Extension;
 
 use PhpSpec\ServiceContainer;
-use PhpSpec\Extension\ExtensionInterfacep;
+use PhpSpec\Extension\ExtensionInterface;
 use PhpSpec\Extension\Listener\ServerEnvListener;
+use PhpSpec\Extension\ServerEnvLoader;
+use PhpSpec\Extension;
 
-class ServerEnvExtension implements ExtensionInterface
-{
-    public function load(ServiceContainer $container)
+if (class_exists(Extension::class)) {
+    class ServerEnvExtension extends ServerEnvLoader implements Extension
     {
-        if (method_exists($container, 'setShared')) {
-            $container->setShared('event_dispatcher.listeners.environment', function ($container) {
-                return new ServerEnvListener($container->getParam('server_env'));
-            });
-        } else {
-            $container->define('event_dispatcher.listeners.environment', function ($container) use ($params) {
-                return new ServerEnvListener($container->getParam('server_env'));
-            }, ['event_dispatcher.listeners']);
-        }
+    }
+} else {
+    class ServerEnvExtension extends ServerEnvLoader implements ExtensionInterface
+    {
     }
 }
